@@ -48,6 +48,24 @@
     .textbox {
       margin: 10px 50px;
     }
+
+    #slide-control {
+      position: absolute;
+
+      bottom: 8px;
+      right: 8px;
+
+      display: inline;
+    }
+
+    #slide-control button {
+      border: 1px solid #fff;
+      outline: none;
+      background-color: #000;
+      color: #fff;
+      font-family: "Space Mono", monospace;
+      font-size: 1em;
+    }
   </style>
 </head>
 <body>
@@ -72,6 +90,23 @@
       </div>
     </section>
   </main>
+
+  <div id="slide-control">
+    <button onclick="
+      if (currentSlide > 0) {
+        console.log('clicked');
+        currentSlide--;
+        moveSlide(currentSlide);
+      }
+    ">&#171; previous</button>
+    <button onclick="
+      if (currentSlide < (slides.length - 1)) {
+        console.log('clicked');
+        currentSlide++;
+        moveSlide(currentSlide);     
+      }
+    ">next &#187;</button>
+  </div>
 
   <script>
     let currentSlide = 0;
