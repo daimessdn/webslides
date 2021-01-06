@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>bert</title>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+
+      font-family: "Space Mono";
+
+      background-color: #000;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2.8em;
+    }
+
+    main {
+      height: 100%;
+    }
+
+    .slide {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: transform .5s ease;
+      transform: translateY(0);
+    }
+
+    .slide * {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .textbox {
+      margin: 10px 50px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="slide">
+      <div class="textbox">
+        <h1>BERT</h1>
+      </div>
+
+      <div class="textbox">
+        <h2>something "useful" in natural language processing (NLP).</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox">
+        <h1>Hello</h1>
+      </div>
+
+      <div class="textbox">
+        <h2>Hi...</h2>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll(".slide")
+
+    const moveSlide = (currentSlide) => {
+      slides.forEach(slide => {
+        slide.style.transform = `translateY(-${currentSlide * 100}vh)`;
+      });
+    };
+
+    document.addEventListener("keyup", (event) => {
+      if (
+        (
+          event.key == "ArrowRight" ||
+          event.key == "ArrowDown"
+        ) &&
+        currentSlide < (slides.length - 1)
+      ) {
+        currentSlide++;
+      } else if (
+        (
+          event.key == "ArrowLeft" ||
+          event.key == "ArrowUp"
+        ) &&
+        currentSlide > 0
+      ) {
+        currentSlide--;
+      }
+
+      // console.log(currentSlide);
+      moveSlide(currentSlide);
+    });
+  </script>
+</body>
+</html>
