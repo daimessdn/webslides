@@ -7,10 +7,16 @@
                                  user-scalable=no" />
   <title>bert</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet"> 
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       height: 100%;
       overflow: hidden;
@@ -61,6 +67,25 @@
       margin: 10px 50px;
     }
 
+    .back-section {
+      width: 2em;
+      height: 2em;
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #fff;
+      background-color: #000;
+
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+
+    .back-section a {
+      color: #fff;
+      text-decoration: none;
+    }
+
     #slide-control {
       position: absolute;
 
@@ -72,11 +97,48 @@
 
     #slide-control button {
       border: 1px solid #fff;
+      height: 24px;
       outline: none;
       background-color: #000;
       color: #fff;
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1em;
+
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .content-list {
+      position: absolute;
+      bottom: 40px;
+      right: 8px;
+
+      padding: 4px;
+
+      background-color: #fff;
+      color: #000;
+    }
+
+    .content-list * {
+      margin: 0;
+    }
+
+    .content-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content-list li {
+      width: 100%;
+      padding: 3px;
+    }
+
+    .content-list li:hover {
+      background-color: #000;
+      color: #fff;
+
+      cursor: pointer;
     }
 
     @media screen and (max-width: 670px) {
@@ -117,6 +179,12 @@
     </section>
   </main>
 
+  <nav class="back-section">
+    <a href="https://daimessdn.github.io/webslides">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+  </nav>
+
   <div id="slide-control">
     <button onclick="
       if (currentSlide > 0) {
@@ -125,6 +193,7 @@
         moveSlide(currentSlide);
       }
     ">&#171; previous</button>
+
     <button onclick="
       if (currentSlide < (slides.length - 1)) {
         console.log('clicked');
@@ -132,7 +201,21 @@
         moveSlide(currentSlide);     
       }
     ">next &#187;</button>
+    
+    <button onclick="
+      const style = document.querySelector('.content-list').style.display;
+      document.querySelector('.content-list').style.display = style == 'none' ? 'block' : 'none';
+    ">
+      <i class="fa fa-bars"></i>
+    </button>
   </div>
+
+  <nav class="content-list" style="display: none;">
+    <ul>
+      <li onclick="moveSlide(0); this.parentNode.parentNode.style.display = 'none';">First item</li>
+      <li onclick="moveSlide(1); this.parentNode.parentNode.style.display = 'none';">Second item</li>
+    </ul>
+  </nav>
 
   <script>
     let currentSlide = 0;
