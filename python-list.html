@@ -5,7 +5,7 @@
   <meta name="viewport" content="initial-scale=1.0
                                  width=device-width,
                                  user-scalable=no" />
-  <title>bert</title>
+  <title>Python list methods.</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/dracula.min.css" integrity="sha512-UPcL+5Ec/OV1+OGGgpK9ZS1NLz/sXczHAYUkSaSMQjgIYufontU+rYGAkK9B//Oze4cFTLfLnzNtsI+cG2FwjQ==" crossorigin="anonymous" />
 
@@ -14,275 +14,408 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Roboto+Mono:wght@300;600&display=swap" rel="stylesheet"> 
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      margin: 0;
-
-      font-family: 'Space Grotesk', sans-serif;
-
-      background-color: #000;
-      color: #fff;
-    }
-
-    h1 {
-      font-size: 3em;
-    }
-
-    h2 {
-      font-size: 2.8em;
-    }
-
-    p, pre code {
-      font-size: 1.4em;
-    }
-
-    code, pre code, .code {
-      font-family: "Roboto Mono", monospace;
-    }
-
-    main {
-      height: 100%;
-    }
-
-    .slide {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: transform .5s ease;
-      transform: translateY(0);
-    }
-
-    .slide * {
-      margin: 0;
-
-      font-weight: normal;
-    }
-
-    .slide strong {
-      font-weight: bold;
-    }
-
-    .textbox {
-      margin: 10px 50px;
-    }
-
-    .back-section {
-      width: 2em;
-      height: 2em;
-      display: grid;
-      place-items: center;
-
-      border: 1px solid #fff;
-      background-color: #000;
-
-      position: absolute;
-      top: 8px;
-      left: 8px;
-    }
-
-    .back-section a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    #slide-control {
-      position: absolute;
-
-      bottom: 8px;
-      right: 8px;
-
-      display: inline;
-    }
-
-    #slide-control button {
-      border: 1px solid #fff;
-      height: 24px;
-      outline: none;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1em;
-
-      display: inline-grid;
-      place-items: center;
-    }
-
-    .content-list {
-      position: absolute;
-      bottom: 40px;
-      right: 8px;
-
-      padding: 4px;
-
-      background-color: #fff;
-      color: #000;
-    }
-
-    .content-list * {
-      margin: 0;
-    }
-
-    .content-list ul {
-      list-style: none;
-      width: 300px;
-      overflow-wrap: all;
-      margin: 0;
-      padding: 0;
-    }
-
-    .content-list li {
-      width: 100%;
-      padding: 3px;
-    }
-
-    .content-list li:hover {
-      background-color: #000;
-      color: #fff;
-
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: 670px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
-
-      p, pre code {
-        font-size: .9em;
-      }
-
-      pre code {
-        width: 100%;
-        word-wrap: break-word;
-      }
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
   <main>
     <section class="slide">
-      <div class="textbox">
+      <div class="textbox title">
         <h1>Python list methods</h1>
       </div>
 
       <div class="textbox">
-        <h2>let's play with list using Python.</h2>
+        <h2>let's play with lists using Python.</h2>
       </div>
     </section>
 
     <section class="slide">
-      <div class="textbox">
+      <div class="textbox title">
         <h1>Python list is used for store many values in a single variable. It can store integers, strings, and also booleans in a single list.</h1>
       </div>
 
       <div class="textbox">
-        <pre><code># defining new fruits list
-fruits = ["apples", "banana", "cherry"]</code></pre>
+        <p>
+          Stuff Python list can store<br />
+          <ul>
+            <li>Numbers (<code>int</code> and <code>float</code>)</li>
+            <li>Strings (<code>str</code>)</li>
+            <li>Booleans (<code>bool</code>)</li>
+            <li>You can also store lists!</li>
+            <li>Dictionaries</li>
+          </ul>
+        </p> 
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Let's define our <code>list</code>...</h1>
+      </div>
+
+      <div class="textbox">
+        <pre><code class="hljs language-python"># defining new fruits list
+fruits = ["apple", "banana", "cherry", "lemon"]
+
+# print the fruit list
+print(fruits)</code></pre>
+      </div>
+
+      <div class="textbox">
+          <pre><code class="hljs language-python"># Output
+["apple", "banana", "cherry", "lemon"]</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>... and also access them.</h1>
+      </div>
+
+      <div class="textbox">
+        <pre><code class="hljs language-python"># get fruit first element (index 0)
+print(fruits[0])
+
+# get fruits third element (index 2)
+print(fruits[2])</code></pre>
+      </div>
+
+      <div class="textbox">
+          <pre><code class="hljs language-python"># Output
+"apple"  # index 0
+"cherry" # index 2</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>There are several list methods can be used.</h1>
+      </div>
+
+      <div class="textbox">
+        <ul>
+          <li><code>.append()</code> - adds an element in the end of the list.</li>
+          <li><code>.clear()</code> - makes the list empty - clear all elements.</li>
+          <li><code>.copy()</code> - return the copy of the list.</li>
+          <li><code>.count()</code> - get the numbers of list elements containing.</li>
+          <li><code>.extend()</code> - add a list of elements at the end of the list.</li>
+          <li><code>.index()</code> - get the index of first matched element.</li>
+          <li><code>.insert()</code> - add the element in specific index.</li>
+          <li><code>.pop()</code> - remove element in specific index.</li>
+          <li><code>.remove()</code> - remove element in certain value.</li>
+          <li><code>.reverse()</code> - reverse the list order.</li>
+          <li><code>.sort()</code> - sort the list elements in ascending order.</li>
+        </ul>  
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>append</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Adds an element <em>x</em> in the end of the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Let's go back into <code>fruits</code> list.<br />
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]</code></pre>
+        </p>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Then add an element using <code>.append()</code>.<br />
+          <pre><code class="hljs language-python">fruits.append("kiwi")
+print(fruits)  # outputs ["apple", "banana", "cherry", "lemon", "kiwi"]</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>clear</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove all items from the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+fruits.clear()
+
+print(fruits) # outputs []</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>copy</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return a "shallow copy" of the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+my_fruits = fruits.copy()
+
+print(my_fruits)
+# outputs
+# ["apple", "banana", "cherry", "lemon"]</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>count</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return the number of <em>x</em> times appeared in the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+my_fruits = fruits.copy()
+
+print(my_fruits.count("apple")) # outputs 1
+                                # bcoz' there is 1 "apple"</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>extend</strong>(<em>iterables</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Extend the list by appending all the items from the <em>iterable</em> (lists, dictionaries, sets, etc.).</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+another_fruits = ["grape", "papaya", "watermelon"]
+
+# append another_fruits list
+## into fruits
+fruits.extend(another_fruits)
+
+
+print(fruits) # outputs ['apple', 'banana', 'cherry', 'lemon',
+              #          'grape', 'papaya', 'watermelon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>index</strong>(<em>x</em>, [<em>start</em>, [<em>end</em>]])</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return zero-based index in the list of the first item whose value is equal to <em>x</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# find index of "lemon"
+print(fruits.index("lemon")) # outputs 3</code></pre>
+        </p>
+      </div>
+    </section>
+
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>insert</strong>(<em>i</em>, <em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Insert an item <em>x</em> at a given position <em>i</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# insert "blueberry" on index 2
+fruits.insert(2, "blueberry")
+print(fruits) 
+
+# outputs
+# ['apple', 'banana', 'blueberry', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>pop</strong>([<em>i</em>])</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove the item at the given position <em>i</em> in the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# remove item in index 1
+fruits.pop(1)
+print(fruits) 
+
+# outputs
+# ['apple', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>remove</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove the first item from the list whose value is equal to <em>x</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# remove "apple"
+fruits.remove("apple")
+print(fruits) 
+
+# outputs
+# ['banana', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>reverse</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Reverse the elements of the list in place.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# reverse fruits order
+fruits.reverse()
+print(fruits) 
+
+# outputs
+# ['lemon', 'cherry', 'banana', 'apple']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>sort</strong>(<em>key=None, reverse=False</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Sort the items of the list in place.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "cherry", "lemon", "banana"]
+
+# sort fruits order
+fruits.sort()
+print(fruits) 
+
+# outputs
+# ['apple', 'banana', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Some reference(s)</h1>
+      </div>
+
+      <div class="textbox">
+        <ul>
+          <li>
+            <a href="https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists"
+               target="_blank"
+               rel="nofollow">
+              Python Official Documentation - Data Structures
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.w3schools.com/python/python_ref_list.asp"
+               target="_blank"
+               rel="nofollow">
+              W3Schools.com - Python List/Array Methods
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Thank you</h1>
       </div>
     </section>
   </main>
 
+  <!-- back section -->
   <nav class="back-section">
     <a href="https://daimessdn.github.io/webslides">
       <i class="fa fa-arrow-left"></i>
     </a>
   </nav>
 
+  <!-- slide control -->
   <div id="slide-control">
-    <button onclick="
-      if (currentSlide > 0) {
-        console.log('clicked');
-        currentSlide--;
-        moveSlide(currentSlide);
-      }
-    ">&#171; previous</button>
-
-    <button onclick="
-      if (currentSlide < (slides.length - 1)) {
-        console.log('clicked');
-        currentSlide++;
-        moveSlide(currentSlide);     
-      }
-    ">next &#187;</button>
-    
-    <button onclick="
-      const style = document.querySelector('.content-list').style.display;
-      document.querySelector('.content-list').style.display = style == 'none' ? 'block' : 'none';
-    ">
+    <button id="previous">&#171; previous</button>
+    <button id="next">next &#187;</button>
+    <button disabled>
+      <b><span id="current-slide-number">X</span>/<span id="total-slide-number">X</span></b>
+    </button>
+    <button id="toggle-content-list">
       <i class="fa fa-bars"></i>
     </button>
   </div>
 
-  <nav class="content-list" style="display: none;">
-    <ul>
-      <li onclick="moveSlide(0); this.parentNode.parentNode.style.display = 'none';">Python list methods</li>
-      <li onclick="moveSlide(1); this.parentNode.parentNode.style.display = 'none';">Python list is used for store many values in a single variable. It can store integers, strings, and also booleans in a single list.</li>
-    </ul>
-  </nav>
+  <!-- content list -->
+  <nav class="content-list" style="display: none;"><ul></ul></nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha512-9GIHU4rPKUMvNOHFOer5Zm2zHnZOjayOO3lZpokhhCtgt8FNlNiW/bb7kl0R5ZXfCDVPcQ8S4oBdNs92p5Nm2w==" crossorigin="anonymous"></script>
 
-  <script>
-    let currentSlide = 0;
-
-    const slides = document.querySelectorAll(".slide")
-
-    const moveSlide = (currentSlide) => {
-      slides.forEach(slide => {
-        slide.style.transform = `translateY(-${currentSlide * 100}vh)`;
-      });
-    };
-
-    document.addEventListener("keyup", (event) => {
-      if (
-        (
-          event.key == "ArrowRight" ||
-          event.key == "ArrowDown"
-        ) &&
-        currentSlide < (slides.length - 1)
-      ) {
-        currentSlide++;
-      } else if (
-        (
-          event.key == "ArrowLeft" ||
-          event.key == "ArrowUp"
-        ) &&
-        currentSlide > 0
-      ) {
-        currentSlide--;
-      }
-
-      // console.log(currentSlide);
-      moveSlide(currentSlide);
-    });
-  </script>
-
-  <script>
-    hljs.initHighlightingOnLoad();
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-
-      // first, find all the div.code blocks
-      document.querySelectorAll('div.code').forEach(block => {
-        // then highlight each
-        hljs.highlightBlock(block);
-      });
-    });
-
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
