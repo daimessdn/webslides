@@ -8,6 +8,9 @@ const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#previous");
 const contentToggleButton = document.querySelector("#toggle-content-list");
 
+const linkedInShareButton = document.querySelector("#linkedin-share-button");
+const twitterShareButton = document.querySelector("#twitter-share-button");
+
 // move slides
 const moveSlide = (currentSlide) => {
   slides.forEach(slide => {
@@ -105,3 +108,10 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+twitterShareButton.addEventListener("click", (event) => {
+  window.open(`https://twitter.com/share?url=${window.location.href}`, "_blank");
+});
+
+linkedInShareButton.addEventListener("click", (event) => {
+  window.open(`www.linkedin.com/sharing/share-offsite/?url=${window.locatin.href}`, "_blank");
+});

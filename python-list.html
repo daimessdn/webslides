@@ -8,9 +8,9 @@
                                  width=device-width,
                                  user-scalable=no" />
 
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:title" content="Python list methods" />
-  <meta property="og:description" content="There are useful methods you can use when playing with list with Python." />
+  <meta property="og:description" content="Check out Python list methods on webslides." />
   <meta property="og:url" content="https://daimessdn.github.io/webslides/python-list.html" />
   <meta property="og:image" content="https://raw.githubusercontent.com/daimessdn/webslides/master/banner/banner-facebook.png" />
 
@@ -32,6 +32,9 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v9.0" nonce="mj78bKAU"></script>
+
   <main>
     <section class="slide">
       <div class="textbox title">
@@ -416,6 +419,15 @@ print(fruits)
 
   <!-- slide control -->
   <div id="slide-control">
+    <button disabled>
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    </button>
+    <button id="linkedin-share-button">
+      <i class="fab fa-linkedin-in"></i>
+    </button>
+    <button id="twitter-share-button">
+      <i class="fab fa-twitter"></i>
+    </button>
     <button id="previous">&#171; previous</button>
     <button id="next">next &#187;</button>
     <button disabled>

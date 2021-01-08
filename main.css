@@ -110,6 +110,11 @@ main {
   place-items: center;
 }
 
+#slide-control button a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .content-list {
   position: absolute;
   bottom: 40px;
