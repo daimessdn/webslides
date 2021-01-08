@@ -113,5 +113,5 @@ twitterShareButton.addEventListener("click", (event) => {
 });
 
 linkedInShareButton.addEventListener("click", (event) => {
-  window.open(`www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, "_blank");
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, "_blank");
 });
