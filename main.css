@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-
-
 }
 
 html, body {
@@ -28,12 +26,11 @@ h3 {
   font-size: 2.4em;
 }
 
-.slide p,
-.slide pre code,
-.slide ol,
-.slide ol *,
-.slide ul,
-.slide ul *,  {
+p,
+pre code,
+ol,
+ol *,
+ul, ul *  {
   font-size: 1.3em;
 }
 
