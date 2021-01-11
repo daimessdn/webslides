@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="manifest" content="./manifest.json" />
+
+  <meta name="viewport" content="initial-scale=1.0
+                                 width=device-width,
+                                 user-scalable=no" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Python tuple" />
+  <meta property="og:description" content="Check out Python tuple on webslides." />
+  <meta property="og:url" content="https://daimessdn.github.io/webslides/python-tuple.html" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/daimessdn/webslides/master/banner/banner-facebook.png" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@daimessdn" />
+  <meta name="twitter:title" content="Python tuple" />
+  <meta name="twitter:description" content="Check out Python tuple on webslides" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/daimessdn/webslides/master/banner/banner-twitter.png" />
+  
+  <title>Python tuple.</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/dracula.min.css" integrity="sha512-UPcL+5Ec/OV1+OGGgpK9ZS1NLz/sXczHAYUkSaSMQjgIYufontU+rYGAkK9B//Oze4cFTLfLnzNtsI+cG2FwjQ==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Roboto+Mono:wght@300;600&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v9.0" nonce="mj78bKAU"></script>
+
+  <main>
+    <section class="slide">
+      <div class="textbox title">
+        <h1>(<em>tuple</em>)</h1>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Tuples in Python store many values inside one variable like lists, but the tuple elements cannot be modified (<em>immutable</em>).</h1>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Stuff Python tuple can store:<br />
+          <ul>
+            <li>Numbers (<code>int</code> and <code>float</code>)</li>
+            <li>Strings (<code>str</code>)</li>
+            <li>Booleans (<code>bool</code>)</li>
+            <li>Lists (and yeah, also the tuple can)</li>
+            <li>Dictionaries</li>
+            <li>Class instances</li>
+          </ul>
+        </p> 
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Tuple list has some good things...</h1>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Since tuple is immutable,<br />
+          <ul>
+            <li>It can be used for heterogenous data types, while lists usually used in homogenous data types.</li>
+            <li>it is faster than lists when doing some iterations.</li>
+            <li>it can be used as a key for a dictionary.</li>
+            <li>the elements inside it will be write-protection so it prevents unintended changes.</li>
+          </ul>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Some functions can be used in tuple:</h1>
+      </div>
+
+      <div class="textbox">
+        <ul>
+          <li><code>all()</code> - checks the tuple elements:
+            <ul>
+              <li>returns <code>True</code> if the tuple is empty.</li>
+              <li>returns <code>True</code> if all elements in a tuple are <code>True</code></li>
+            </ul>
+          </li>
+          <li><code>any()</code> -checks the tuple elements:
+            <ul>
+              <li>returns <code>False</code> if the tuple is empty.</li>
+              <li>returns <code>True</code> if any elements in a tuple are <code>True</code></li>
+            </ul>
+          </li>
+          <li><code>enumerate()</code> - return enumerate object containins key and values pair for each iterable element.</li>
+          <li><code>len()</code> - get the numbers of elements inside tuples.</li>
+          <li><code>max()</code> - get the maximum element value inside the tuple</li>
+          <li><code>min()</code> - get the minimum element valus inside the tuple.</li>
+          <li><code>sorted()</code> - return new sorted list</li>
+          <li><code>sum()</code> - sum all integer elements.</li>
+          <li><code>tuple()</code> - convert everything inside brackets into tupe.</li>
+        </ul>  
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>How do we define tuples?</h1>
+      </div>
+
+      <div class="textbox">
+        <pre><code class="hljs language-python"># define empty tuple
+empty_tuple = ()
+print(empty_tuple) # outputs ()</code></pre>
+      </div>
+
+      <div class="textbox">
+        <pre><code>
+# define a tuple
+tuple1 = (1, 3, 2, 5)
+print(tuple1) # outputs (1, 3, 2, 5)</code></pre>
+      </div>
+
+      <div class="textbox">
+        <pre><code>
+# define a heterogenous tuple
+heterogenous_tuple = (121, "Bill", ['sauce', 'cabbage'], True)
+print(heterogenous_tuple)  # outputs
+                           # (121, "Bill", ['sauce', 'cabbage'], True)</code></pre>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>append</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Adds an element <em>x</em> in the end of the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Let's go back into <code>fruits</code> list.<br />
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]</code></pre>
+        </p>
+      </div>
+
+      <div class="textbox">
+        <p>
+          Then add an element using <code>.append()</code>.<br />
+          <pre><code class="hljs language-python">fruits.append("kiwi")
+print(fruits)  # outputs ["apple", "banana", "cherry", "lemon", "kiwi"]</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>clear</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove all items from the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+fruits.clear()
+
+print(fruits) # outputs []</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>copy</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return a "shallow copy" of the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+my_fruits = fruits.copy()
+
+print(my_fruits)
+# outputs
+# ["apple", "banana", "cherry", "lemon"]</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>count</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return the number of <em>x</em> times appeared in the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+my_fruits = fruits.copy()
+
+print(my_fruits.count("apple")) # outputs 1
+                                # bcoz' there is 1 "apple"</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>extend</strong>(<em>iterables</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Extend the list by appending all the items from the <em>iterable</em> (lists, dictionaries, sets, etc.).</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+another_fruits = ["grape", "papaya", "watermelon"]
+
+# append another_fruits list
+## into fruits
+fruits.extend(another_fruits)
+
+
+print(fruits) # outputs ['apple', 'banana', 'cherry', 'lemon',
+              #          'grape', 'papaya', 'watermelon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>index</strong>(<em>x</em>, [<em>start</em>, [<em>end</em>]])</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Return zero-based index in the list of the first item whose value is equal to <em>x</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# find index of "lemon"
+print(fruits.index("lemon")) # outputs 3</code></pre>
+        </p>
+      </div>
+    </section>
+
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>insert</strong>(<em>i</em>, <em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Insert an item <em>x</em> at a given position <em>i</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# insert "blueberry" on index 2
+fruits.insert(2, "blueberry")
+print(fruits) 
+
+# outputs
+# ['apple', 'banana', 'blueberry', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>pop</strong>([<em>i</em>])</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove the item at the given position <em>i</em> in the list.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# remove item in index 1
+fruits.pop(1)
+print(fruits) 
+
+# outputs
+# ['apple', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>remove</strong>(<em>x</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Remove the first item from the list whose value is equal to <em>x</em>.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# remove "apple"
+fruits.remove("apple")
+print(fruits) 
+
+# outputs
+# ['banana', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>reverse</strong>()</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Reverse the elements of the list in place.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "banana", "cherry", "lemon"]
+
+# reverse fruits order
+fruits.reverse()
+print(fruits) 
+
+# outputs
+# ['lemon', 'cherry', 'banana', 'apple']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1><code>list.<strong>sort</strong>(<em>key=None, reverse=False</em>)</code></h1>
+      </div>
+
+      <div class="textbox">
+        <h3>Sort the items of the list in place.</h3>
+      </div>
+
+      <div class="textbox">
+        <p>
+          <pre><code class="hljs language-python">fruits = ["apple", "cherry", "lemon", "banana"]
+
+# sort fruits order
+fruits.sort()
+print(fruits) 
+
+# outputs
+# ['apple', 'banana', 'cherry', 'lemon']</code></pre>
+        </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Some reference(s)</h1>
+      </div>
+
+      <div class="textbox">
+        <ul>
+          <li>
+            <a href="https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists"
+               target="_blank"
+               rel="nofollow">
+              Python Official Documentation - Data Structures
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.w3schools.com/python/python_ref_list.asp"
+               target="_blank"
+               rel="nofollow">
+              W3Schools.com - Python List/Array Methods
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="textbox title">
+        <h1>Thank you</h1>
+      </div>
+    </section>
+  </main>
+
+  <!-- back section -->
+  <nav class="back-section">
+    <a href="https://daimessdn.github.io/webslides">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+  </nav>
+
+  <!-- slide control -->
+  <div id="slide-control">
+    <button disabled>
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+    </button>
+    <button id="linkedin-share-button">
+      <i class="fab fa-linkedin-in"></i>
+    </button>
+    <button id="twitter-share-button">
+      <i class="fab fa-twitter"></i>
+    </button>
+    <button id="previous">&#171; previous</button>
+    <button id="next">next &#187;</button>
+    <button disabled>
+      <b><span id="current-slide-number">X</span>/<span id="total-slide-number">X</span></b>
+    </button>
+    <button id="toggle-content-list">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- content list -->
+  <nav class="content-list" style="display: none;"><ul></ul></nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha512-9GIHU4rPKUMvNOHFOer5Zm2zHnZOjayOO3lZpokhhCtgt8FNlNiW/bb7kl0R5ZXfCDVPcQ8S4oBdNs92p5Nm2w==" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>

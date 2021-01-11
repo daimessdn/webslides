@@ -28,7 +28,12 @@ h3 {
   font-size: 2.4em;
 }
 
-.slide p, .slide pre code, .slide ol, .slide ul {
+.slide p,
+.slide pre code,
+.slide ol,
+.slide ol *,
+.slide ul,
+.slide ul *,  {
   font-size: 1.3em;
 }
 
