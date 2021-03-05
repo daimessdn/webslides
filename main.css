@@ -73,6 +73,10 @@ main {
   margin: 10px 50px;
 }
 
+.textbox li, .textbox li a, .textbox li code {
+  font-size: 24px;
+}
+
 .back-section {
   width: 2em;
   height: 2em;
@@ -125,6 +129,8 @@ main {
   position: absolute;
   bottom: 40px;
   right: 8px;
+
+  font-size: .5em;
 
   
   max-height: 300px;
